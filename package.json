@@ -1,0 +1,17 @@
+{
+  "name": "babel-sourcemap-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "rimraf dist/ && babel src --out-dir dist/ --source-maps && node -r source-map-support/register dist/index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "rimraf": "^2.6.3",
+    "source-map-support": "^0.5.12"
+  }
+}
