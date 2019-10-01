@@ -6,8 +6,4 @@ function bar() {
   foo();
 }
 
-function bob() {
-  bar();
-}
-
-bob();
+bar();

@@ -1,9 +1,9 @@
-# Babel Sourcemap bug
+# `source-map-support` bug
 
 Steps to reproduce:
 
-- Run `yarn install` or `npm install`
-- Execute the `test` npm script
+- Run `npm install`
+- Execute the `npm run babel`
 
 Acutal output:
 
@@ -13,7 +13,6 @@ _Note that only the first function name is correct. They seem to be off by one. 
 Error:
     at foo (/my-project/src/foo.js:5:15)
     at foo (/my-project/src/foo.js:9:3)
-    at bar (/my-project/src/foo.js:13:3)
     ...more
 ```
 
@@ -23,6 +22,7 @@ Expected output:
 Error:
     at foo (/my-project/src/foo.js:5:15)
     at bar (/my-project/src/foo.js:9:3)
-    at bob (/my-project/src/foo.js:13:3)
     ...more
 ```
+
+You can also run `npm run terser`, this issue is also reproducible with terser.

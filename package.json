@@ -1,17 +1,18 @@
 {
-  "name": "babel-sourcemap-bug",
+  "name": "source-map-support-bug",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "rimraf dist/ && babel src --out-dir dist/ --source-maps && node -r source-map-support/register dist/index.js"
+    "babel": "babel src --out-dir dist/ --source-maps && node -r source-map-support/register dist/index.js",
+    "terser": "terser src/index.js --compress --mangle --source-map 'url=index-terser.js.map' -o dist/index-terser.js && node -r source-map-support/register dist/index-terser.js"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "rimraf": "^2.6.3",
-    "source-map-support": "^0.5.12"
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "source-map-support": "^0.5.13",
+    "terser": "^4.3.4"
   }
 }
